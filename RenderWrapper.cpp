@@ -8,7 +8,6 @@ void Renderable::render(MCUFRIEND_kbv* target){}
 
 void RenderTarget::init(){
   m_target.begin(0x9341);
-  m_target.setRotation(1);
   m_target.fillScreen(RGB(0, 0, 0));
 }
 

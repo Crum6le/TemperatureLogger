@@ -9,8 +9,7 @@
 // A renderable object
 ////////////////////////
 
-class Renderable
-{
+class Renderable{
 public:
     Renderable();
     ~Renderable();

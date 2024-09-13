@@ -1,12 +1,17 @@
-#include "RenderWrapper.hpp"
+#include "TouchscreenWrapper.hpp"
 
-RenderTarget target;
+Touchable t;
 
 void setup(){
   Serial.begin(9600);
-
-  target.init();
 }
 
 void loop(){
+    TouchPoint p = t.getTouchPointInScreenSpace();
+    if(p.touched){
+      Serial.print("X: ");
+      Serial.print(p.x);
+      Serial.print(" , Y: ");
+      Serial.println(p.y);
+    }
 }
