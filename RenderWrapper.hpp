@@ -39,7 +39,7 @@ public:
     Renderable();
     ~Renderable();
 
-    virtual void render(bool clear);
+    virtual void render();
 };
 
 #endif

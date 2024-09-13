@@ -17,7 +17,7 @@ public:
     Button(int positionXMin, int positionXMax, int positionYMin, int positionYMax, uint16_t colorPressed, uint16_t colorReleased);
     ~Button();
 
-    void render(bool clear) override;
+    void render() override;
 
 private:
     int m_positionXMin, m_positionXMax, m_positionYMin, m_positionYMax;

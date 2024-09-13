@@ -15,16 +15,12 @@ Button::Button(int positionXMin, int positionXMax, int positionYMin, int positio
 
 Button::~Button(){}
 
-void Button::render(bool clear){
-    if(!clear){
-        TouchPoint p = getTouchPointInScreenSpace();
+void Button::render(){
+    TouchPoint p = getTouchPointInScreenSpace();
 
-        if(p.touched){
-            display.fillRect(m_positionXMin, m_positionYMin, m_width, m_height, RGB(0, 255, 0));
-        }else{
-            display.fillRect(m_positionXMin, m_positionYMin, m_width, m_height, RGB(255, 0, 0));
-        }
+    if(p.touched){
+        display.fillRect(m_positionXMin, m_positionYMin, m_width, m_height, RGB(0, 255, 0));
     }else{
-        display.fillRect(m_positionXMin, m_positionYMin, m_width, m_height, DISPLAY_COLOR_CLEAR);
+        display.fillRect(m_positionXMin, m_positionYMin, m_width, m_height, RGB(255, 0, 0));
     }
 }
