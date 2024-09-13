@@ -15,5 +15,10 @@ TouchPoint Touchable::getTouchPointInScreenSpace(){
 
     touchPointInScreenSpace.touched = point.z > touchscreen.pressureThreshhold ? true : false;
 
+    // Touchscreen and Display share Pins
+    pinMode(TOUCHSCREEN_PIN_X_ANALOG, OUTPUT);
+    pinMode(TOUCHSCREEN_PIN_Y_ANALOG, OUTPUT);
+
+
     return touchPointInScreenSpace;
 }

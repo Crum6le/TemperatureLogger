@@ -1,38 +1,45 @@
 #ifndef RENDERWRAPPER_HPP
 #define RENDERWRAPPER_HPP
 
+////////////
+// Include
+////////////
+
 #include <MCUFRIEND_kbv.h>
 
-#include "util.hpp"
+#include "utility.hpp"
 
-////////////////////////
-// A renderable object
-////////////////////////
+////////////////
+// Definitions
+////////////////
+
+#define DISPLAY_SCREEN_WIDTH 320
+#define DISPLAY_SCREEN_HEIGHT 240
+
+#define DISPLAY_COLOR_CLEAR RGB(0, 0, 0)
+
+//////////////
+// Variables
+//////////////
+
+extern MCUFRIEND_kbv display;
+
+//////////////
+// Functions
+//////////////
+
+void displayInitialise();
+
+////////////
+// Classes
+////////////
 
 class Renderable{
 public:
     Renderable();
     ~Renderable();
 
-    virtual void render(MCUFRIEND_kbv* target);
-};
-
-////////////////////////////
-// the window to render to
-////////////////////////////
-
-class RenderTarget{
-public:
-    ~RenderTarget();
-
-    void init();
-
-    MCUFRIEND_kbv* getRenderTarget();
-
-private:
-    MCUFRIEND_kbv m_target;
-
-
+    virtual void render(bool clear);
 };
 
 #endif

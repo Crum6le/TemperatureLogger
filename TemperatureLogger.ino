@@ -1,17 +1,16 @@
-#include "TouchscreenWrapper.hpp"
+#include "Button.hpp"
 
-Touchable t;
+#include "utility.hpp"
+
+Button b = Button(100, 220, 20, 220, RGB(255, 0, 0), RGB(0, 255, 0));
 
 void setup(){
   Serial.begin(9600);
+
+  displayInitialise();
 }
 
 void loop(){
-    TouchPoint p = t.getTouchPointInScreenSpace();
-    if(p.touched){
-      Serial.print("X: ");
-      Serial.print(p.x);
-      Serial.print(" , Y: ");
-      Serial.println(p.y);
-    }
+    b.render(false);
+    b.render(true);
 }
